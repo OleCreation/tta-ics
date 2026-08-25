@@ -4,7 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-:root {
+:root, [data-theme="dark"] {
+    color-scheme: dark;
+
     /* ---- DARK THEME (Fallback default variables) ---- */
     --primary: #f8fafc;
     --accent: #6366f1;
@@ -20,10 +22,13 @@
     --bg: #161e2e;
     --bg-card: #161e2e;
     --bg-card-solid: #161e2e;
+    --bg-header: rgba(30, 41, 59, 0.35);
     --bg-input: #0b0f19;
+    --bg-input-focus: #0f172a;
     --surface: #1e293b;
     --border: #334155;
     --border-accent: rgba(99, 102, 241, 0.4);
+    --header-gradient: linear-gradient(135deg, #e2e8f0 0%, #818cf8 50%, #6366f1 100%);
     
     /* 5-Level Text Hierarchy */
     --text: #cbd5e1;               /* Primary */
@@ -43,59 +48,69 @@
 }
 
 [data-theme="light"] {
+    color-scheme: light;
+
     --primary: #1e293b;
     --accent: #6366f1;
     --accent-hover: #4f46e5;
-    --accent-glow: rgba(99, 102, 241, 0.2);
+    --accent-glow: rgba(99, 102, 241, 0.15);
     --success: #6b9b7a;
     --success-hover: #5a8567;
     --success-glow: rgba(107, 155, 122, 0.15);
     --danger: #c85a54;
     --danger-hover: #b44b45;
     --warning: #f59e0b;
-    --bg-deep: #fafafa;
+    --bg-deep: #f8fafc;
     --bg: #ffffff;
     --bg-card: #ffffff;
     --bg-card-solid: #ffffff;
-    --bg-input: #fafafa;
-    --surface: #e8e6e1;
-    --border: #e8e6e1;
+    --bg-header: rgba(0, 0, 0, 0.02);
+    --bg-input: #f8fafc;
+    --bg-input-focus: #ffffff;
+    --surface: #f1f5f9;
+    --border: #e2e8f0;
     --border-accent: rgba(99, 102, 241, 0.3);
+    --header-gradient: linear-gradient(135deg, #1e293b 0%, #4338ca 50%, #6366f1 100%);
     
     /* 5-Level Text Hierarchy */
-    --text: #3c3c3c;               /* Primary */
-    --text-strong: #2a2a2a;        /* Strongest emphasis */
-    --text-muted: #6a6a6a;         /* Secondary */
-    --text-dim: #7a7a7a;           /* Tertiary */
-    --text-disabled: #9b9b9b;      /* Disabled */
+    --text: #334155;               /* Primary */
+    --text-strong: #0f172a;        /* Strongest emphasis */
+    --text-muted: #64748b;         /* Secondary */
+    --text-dim: #94a3b8;           /* Tertiary */
+    --text-disabled: #cbd5e1;      /* Disabled */
 }
 
 [data-theme="blue"] {
+    color-scheme: light;
+
     --primary: #1e293b;
     --accent: #3182f6;             /* Vibrant Toss Blue (Accent) */
     --accent-hover: #1b6fd1;
-    --accent-glow: rgba(49, 130, 246, 0.2);
+    --accent-glow: rgba(49, 130, 246, 0.15);
     --success: #6b9b7a;            /* StyleSeed Success (muted green) */
     --success-hover: #5a8567;
     --success-glow: rgba(107, 155, 122, 0.15);
     --danger: #c85a54;             /* StyleSeed Urgent (muted red) */
     --danger-hover: #b44b45;
     --warning: #f59e0b;
-    --bg-deep: #fafafa;            /* Off-white page background */
+    --bg-deep: #f0f6ff;            /* Subtle cool blue-tinted page background */
     --bg: #ffffff;                 /* Pure white card interior */
     --bg-card: #ffffff;
     --bg-card-solid: #ffffff;
-    --bg-input: #fafafa;
-    --surface: #e8e6e1;
-    --border: #e8e6e1;
+    --bg-header: rgba(49, 130, 246, 0.03);
+    --bg-input: #f8fafc;
+    --bg-input-focus: #ffffff;
+    --surface: #eef4fe;
+    --border: #dbe7f6;
     --border-accent: rgba(49, 130, 246, 0.3);
+    --header-gradient: linear-gradient(135deg, #1e293b 0%, #1d4ed8 50%, #3182f6 100%);
     
     /* 5-Level Text Hierarchy */
-    --text: #3c3c3c;               /* Primary */
-    --text-strong: #2a2a2a;        /* Strongest emphasis */
-    --text-muted: #6a6a6a;         /* Secondary */
-    --text-dim: #7a7a7a;           /* Tertiary */
-    --text-disabled: #9b9b9b;      /* Disabled */
+    --text: #334155;               /* Primary */
+    --text-strong: #0f172a;        /* Strongest emphasis */
+    --text-muted: #64748b;         /* Secondary */
+    --text-dim: #94a3b8;           /* Tertiary */
+    --text-disabled: #cbd5e1;      /* Disabled */
 }
 
 *, *::before, *::after {
@@ -112,8 +127,8 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
     background: var(--bg-deep);
     background-image: 
-        radial-gradient(ellipse at 20% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 100%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+        radial-gradient(ellipse at 20% 0%, var(--accent-glow) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 100%, var(--success-glow) 0%, transparent 50%);
     background-attachment: fixed;
     color: var(--text);
     margin: 0;
@@ -144,7 +159,7 @@ body {
     font-weight: 800;
     margin: 0 0 4px;
     letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #e2e8f0 0%, #818cf8 50%, #6366f1 100%);
+    background: var(--header-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -218,8 +233,8 @@ h1 {
     font-size: 1rem;
     font-weight: 600;
     border-bottom: 1px solid var(--border);
-    background: rgba(30, 41, 59, 0.3);
-    color: var(--text);
+    background: var(--bg-header);
+    color: var(--text-strong);
 }
 
 .card-header-toggle {
@@ -271,7 +286,7 @@ h1 {
     border-top: 3px solid var(--success);
 }
 
-/* ---- Form elements (touch-sized, dark) ---- */
+/* ---- Form elements (touch-sized) ---- */
 label {
     font-weight: 600;
     font-size: 0.8rem;
@@ -299,9 +314,15 @@ input[type="file"] {
     font-family: inherit;
     background: var(--bg-input);
     color: var(--text);
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
     appearance: none;
     -webkit-appearance: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-dim);
+    opacity: 0.8;
 }
 
 select {
@@ -309,6 +330,11 @@ select {
     background-repeat: no-repeat;
     background-position: right 16px center;
     padding-right: 40px;
+}
+
+option {
+    background: var(--bg-card-solid);
+    color: var(--text);
 }
 
 textarea {
@@ -319,8 +345,19 @@ textarea {
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--accent);
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--bg-input-focus);
+    color: var(--text-strong);
     box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+::selection {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+input::selection, textarea::selection {
+    background: var(--accent);
+    color: #ffffff;
 }
 
 /* ---- Grid ---- */
