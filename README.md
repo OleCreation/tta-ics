@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ TTA Lønns-Kalender
+# 🛡️ TTA vakter til kalender
 
 **Konverter vaktlister fra TTA til kalenderfiler (.ics) med automatisk regelsjekk og valgfri lønnsberegning.**
 
@@ -43,7 +43,7 @@
 
 ## 📱 Mobil-app installasjon (Android & iPhone)
 
-Du kan enkelt bruke **TTA Lønns-Kalender** som en ekte app på mobilen:
+Du kan enkelt bruke **TTA vakter til kalender** som en ekte app på mobilen:
 
 ### 🍎 iPhone / iPad (iOS)
 1. Åpne **[olecreation.github.io/tta-ics](https://olecreation.github.io/tta-ics)** i **Safari**.

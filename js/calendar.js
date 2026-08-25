@@ -102,7 +102,7 @@ function calCreateBackup() {
 
     const backup = {
         version: '1.0',
-        app: 'TTA Lønns-Kalender',
+        app: 'TTA vakter til kalender',
         user: 'OMS023',
         createdAt: new Date().toISOString(),
         eventCount: events.length,
