@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#161e2e">
+    <title>Personvernerklæring — TTA Lønns-Kalender</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .privacy-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-top: 16px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .privacy-card h2 {
+            color: var(--text-strong);
+            font-size: 1.15rem;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+        }
+        .privacy-card h2:first-of-type {
+            margin-top: 0;
+        }
+        .badge-green {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" style="max-width: 680px;">
+    <div class="app-header">
+        <h1>
+            <svg class="header-icon" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px; color: var(--accent);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>TTA Lønns-Kalender</span>
+        </h1>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Personvernerklæring (Privacy Policy)</p>
+    </div>
+
+    <div class="privacy-card">
+        <div class="badge-green">
+            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            100 % Lokal & Privat Databehandling
+        </div>
+
+        <p><strong>TTA Lønns-Kalender</strong> er utviklet med fullt fokus på personvern og datasikkerhet. Applikasjonen samler <em>ikke</em> inn personopplysninger og sender ingen data over internett.</p>
+
+        <h2>1. Hvilke data behandles?</h2>
+        <p>Når du bruker applikasjonen til å tolke vaktlister eller beregne lønn, behandles følgende opplysninger:</p>
+        <ul>
+            <li>Vakttidspunkter, vaktkoder og vaktbeskrivelser som du selv limer inn eller taster inn.</li>
+            <li>Lønnsgrunnlag (f.eks. årslønn, divisor og eventuelle faste tillegg) som du oppgir for lønnsberegning.</li>
+        </ul>
+
+        <h2>2. Hvor lagres dataene?</h2>
+        <p>Alle data lagres <strong>utelukkende lokalt på din egen enhet</strong> (i nettleserens <code>localStorage</code> eller appens lokale minne). Ingen vaktlister, navn eller lønnstall sendes til eksterne servere, skylagring eller tredjeparter.</p>
+
+        <h2>3. Ingen sporing eller analyseverktøy</h2>
+        <p>Applikasjonen inneholder:</p>
+        <ul>
+            <li>Ingen informasjonskapsler (cookies) for sporing.</li>
+            <li>Ingen analyseverktøy (f.eks. Google Analytics eller lignende).</li>
+            <li>Ingen tredjeparts annonser eller sporingsskript.</li>
+        </ul>
+
+        <h2>4. Eksport av kalenderfiler (.ics)</h2>
+        <p>Når du laster ned eller deler kalenderfiler (.ics), genereres disse direkte på enheten din. Du har full kontroll over hvem du deler eller importerer kalenderfilene til.</p>
+
+        <h2>5. Kontakt og kildekode</h2>
+        <p>Kildekoden er åpent tilgjengelig og kan revideres på <a href="https://github.com/OleCreation/tta-ics" target="_blank" rel="noopener noreferrer" style="color: var(--accent-hover);">GitHub</a>.</p>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 16px;">Sist oppdatert: August 2026 · Opphavsperson: OMS023</p>
+        
+        <div style="margin-top: 24px; text-align: center;">
+            <a href="index.html" class="ghost small" style="text-decoration: none; display: inline-block;">← Tilbake til appen</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        TTA Lønns-Kalender · OMS023 · <a href="https://github.com/OleCreation/tta-ics" target="_blank" rel="noopener noreferrer">GitHub</a> · v5.0
+    </div>
+</div>
+
+</body>
+</html>

@@ -41,6 +41,27 @@
 
 ---
 
+## 📱 Mobil-app installasjon (Android & iPhone)
+
+Du kan enkelt bruke **TTA Lønns-Kalender** som en ekte app på mobilen:
+
+### 🍎 iPhone / iPad (iOS)
+1. Åpne **[olecreation.github.io/tta-ics](https://olecreation.github.io/tta-ics)** i **Safari**.
+2. Trykk på **Del-knappen** (firkant med pil opp nederst på skjermen).
+3. Rull ned og velg **«Legg til på Hjem-skjerm»** (*Add to Home Screen*).
+4. Trykk **Legg til**. Appen legger seg nå som et eget ikon på hjemskjermen din med fullskjermvisning!
+
+### 🤖 Android (Direkteinstallasjon / PWA)
+1. Åpne **[olecreation.github.io/tta-ics](https://olecreation.github.io/tta-ics)** i **Google Chrome**.
+2. Trykk på de tre prikkene **(⋮)** øverst til høyre.
+3. Velg **«Installer app»** eller **«Legg til på startskjerm»**.
+4. Appen installeres og fungerer akkurat som en vanlig app!
+
+### 🛒 Google Play Store
+Appen er bygget med [Capacitor](https://capacitorjs.com/) for native Android (.aab) distribusjon via Google Play Console.
+
+---
+
 ## 🛠️ Teknisk Arkitektur
 
 - **Kjerneteknologi:** Ren Vanilla JavaScript (ES6+), HTML5 og CSS3.
