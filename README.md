@@ -57,9 +57,6 @@ Du kan enkelt bruke **TTA vakter til kalender** som en ekte app på mobilen:
 3. Velg **«Installer app»** eller **«Legg til på startskjerm»**.
 4. Appen installeres og fungerer akkurat som en vanlig app!
 
-### 🛒 Google Play Store
-Appen er bygget med [Capacitor](https://capacitorjs.com/) for native Android (.aab) distribusjon via Google Play Console.
-
 ---
 
 ## 🛠️ Teknisk Arkitektur
