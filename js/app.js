@@ -25,9 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // ---- Load saved user settings ----
     loadUserSettings();
 
-    // ---- Load Theme ----
-    const savedTheme = localStorage.getItem('tta_theme') || 'blue';
+    // ---- Load Theme & Width ----
+    let savedTheme = localStorage.getItem('tta_theme') || 'blue';
+    if (savedTheme !== 'blue' && savedTheme !== 'dark') savedTheme = 'blue';
     document.documentElement.setAttribute('data-theme', savedTheme);
+
+    const savedWidth = localStorage.getItem('tta_layout_width') || 'auto';
+    document.documentElement.setAttribute('data-width', savedWidth);
 
     // ---- Platform detection & visibility adjustment ----
     const platform = typeof Capacitor !== 'undefined' ? Capacitor.getPlatform() : 'web';
@@ -153,15 +157,29 @@ function updateRatePreview() {
     }
 }
 
-// ---- Theme Cycling ----
-const themes = ['blue', 'dark', 'light'];
+// ---- Theme & Width Cycling ----
+const themes = ['blue', 'dark'];
 function cycleTheme() {
     let current = document.documentElement.getAttribute('data-theme') || 'blue';
     let nextIndex = (themes.indexOf(current) + 1) % themes.length;
     let nextTheme = themes[nextIndex];
     document.documentElement.setAttribute('data-theme', nextTheme);
     localStorage.setItem('tta_theme', nextTheme);
-    visToast(`Tema endret til: ${nextTheme.toUpperCase()}`);
+    visToast(`Tema endret til: ${nextTheme === 'blue' ? 'BLÅ' : 'MØRK'}`);
+}
+
+function toggleLayoutWidth() {
+    const current = document.documentElement.getAttribute('data-width') || 'auto';
+    let next;
+    if (current === 'wide') {
+        next = 'compact';
+        visToast("Layout: Kompakt (480px)");
+    } else {
+        next = 'wide';
+        visToast("Layout: Dobbel bredde (960px)");
+    }
+    document.documentElement.setAttribute('data-width', next);
+    localStorage.setItem('tta_layout_width', next);
 }
 
 // ---- Input Mode Toggle (Manual only — TTA is always visible) ----
