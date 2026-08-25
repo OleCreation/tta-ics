@@ -1,0 +1,9 @@
+// Lønnssatser gjeldende fra 1. mai 2026 (ATB/HTA)
+Natt_prosent = 45
+Skumring_kr = 40
+Helg_kr = 84
+Beredskap_dag_kr = 19
+Beredskap_natt_kr = 32
+Helligdag_prosent = 133.3
+Hjemmevakt_faktor = 0.20
+AT_tillegg_kr = 45000

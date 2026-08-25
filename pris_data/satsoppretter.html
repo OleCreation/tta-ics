@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Satsoppretter for TTA-App</title>
+    <style>
+        :root {
+            --primary: #0f172a; --accent: #2563eb; --bg: #f8fafc; 
+            --surface: #ffffff; --border: #e2e8f0; --text-main: #0f172a;
+            --radius: 12px;
+        }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text-main); margin: 0; padding: 20px; line-height: 1.5; }
+        .container { max-width: 600px; margin: 0 auto; background: var(--surface); padding: 25px; border-radius: var(--radius); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+        h2 { margin-top: 0; color: var(--primary); text-align: center; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        label { font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 5px; color: #1e293b; }
+        input[type="number"] { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; background: #f1f5f9; }
+        input:focus { outline: none; border-color: var(--accent); background: #fff; }
+        button { width: 100%; background: var(--accent); color: white; border: none; padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 15px; }
+        button:hover { background: #1d4ed8; }
+        .info { font-size: 0.85rem; color: #64748b; margin-bottom: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>⚙️ Generer Satsfil</h2>
+    <p class="info">Fyll inn ønskede satser. Når du trykker på generer, lastes det ned en tekstfil som kan importeres direkte i kalkulatoren.</p>
+
+    <div class="grid-2">
+        <div><label>Natt tillegg (%)</label><input type="number" id="natt" value="45" step="0.1"></div>
+        <div><label>Helligdag tillegg (%)</label><input type="number" id="helligdag" value="133.3" step="0.1"></div>
+    </div>
+    
+    <div class="grid-2">
+        <div><label>Kveld/Skumring (kr/t)</label><input type="number" id="skumring" value="40" step="0.5"></div>
+        <div><label>Helg (kr/t)</label><input type="number" id="helg" value="84" step="0.5"></div>
+    </div>
+
+    <div class="grid-2">
+        <div><label>Beredskap Dag (kr/t)</label><input type="number" id="ber_dag" value="19" step="0.5"></div>
+        <div><label>Beredskap Natt (kr/t)</label><input type="number" id="ber_natt" value="32" step="0.5"></div>
+    </div>
+
+    <div class="grid-2">
+        <div><label>Hjemmevakt Faktor (0.20 = 1/5)</label><input type="number" id="hjemme_faktor" value="0.20" step="0.01"></div>
+        <div><label>AT-tillegg (kr/år)</label><input type="number" id="at_tillegg" value="45000" step="1000"></div>
+    </div>
+
+    <button onclick="genererFil()">📥 Last ned satser (.txt)</button>
+</div>
+
+<script>
+    function genererFil() {
+        let natt = document.getElementById('natt').value;
+        let helligdag = document.getElementById('helligdag').value;
+        let skumring = document.getElementById('skumring').value;
+        let helg = document.getElementById('helg').value;
+        let ber_dag = document.getElementById('ber_dag').value;
+        let ber_natt = document.getElementById('ber_natt').value;
+        let hjemme_faktor = document.getElementById('hjemme_faktor').value;
+        let at_tillegg = document.getElementById('at_tillegg').value;
+
+        // Bygger innholdet i nøyaktig riktig format
+        let innhold = `// Lønnssatser generert via Satsoppretter\n`;
+        let dato = new Date().toLocaleDateString('no-NO');
+        innhold += `// Dato: ${dato}\n\n`;
+        innhold += `Natt_prosent = ${natt}\n`;
+        innhold += `Skumring_kr = ${skumring}\n`;
+        innhold += `Helg_kr = ${helg}\n`;
+        innhold += `Beredskap_dag_kr = ${ber_dag}\n`;
+        innhold += `Beredskap_natt_kr = ${ber_natt}\n`;
+        innhold += `Helligdag_prosent = ${helligdag}\n`;
+        innhold += `Hjemmevakt_faktor = ${hjemme_faktor}\n`;
+        innhold += `AT_tillegg_kr = ${at_tillegg}\n`;
+
+        // Lager og laster ned filen
+        let blob = new Blob([innhold], { type: "text/plain;charset=utf-8" });
+        let url = URL.createObjectURL(blob);
+        let a = document.createElement("a");
+        a.href = url;
+        a.download = `egne_satser_${dato.replace(/\./g, "")}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+</script>
+
+</body>
+</html>
