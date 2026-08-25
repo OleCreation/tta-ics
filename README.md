@@ -4,14 +4,14 @@
 
 **Konverter vaktlister fra TTA til kalenderfiler (.ics) med automatisk regelsjekk og valgfri lønnsberegning.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)](https://olecreation.github.io/TTA-ICS)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)](https://olecreation.github.io/tta-ics)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20iOS%20%7C%20Android-blue?style=for-the-badge)](#)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Local-success?style=for-the-badge)](#)
 
 <br />
 
-[🚀 **Prøv appen direkte i nettleseren**](https://olecreation.github.io/TTA-ICS)
+[🚀 **Prøv appen direkte i nettleseren**](https://olecreation.github.io/tta-ics)
 
 </div>
 
@@ -33,7 +33,7 @@
 ## 🚀 Hvordan bruke verktøyet
 
 1. **Kopier** vaktlisten din fra TTA (f.eks. ukevisning eller månedsvisning).
-2. **Lim inn** i tekstfeltet på [olecreation.github.io/TTA-ICS](https://olecreation.github.io/TTA-ICS).
+2. **Lim inn** i tekstfeltet på [olecreation.github.io/tta-ics](https://olecreation.github.io/tta-ics).
 3. **Velg alternativer:**
    - Huk av for *«Vis timer i tittel»* hvis du vil ha f.eks. `08-15:30 | Vakt`.
    - Huk av for *«Beregn lønn»* hvis du ønsker estimert lønn og tillegg i kalenderen.
