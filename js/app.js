@@ -1,10 +1,10 @@
 // ==========================================
 // GLOBALE VARIABLER & DATA
 // ==========================================
-let globalIcsString = "";
-let globalShiftsData = [];
+var globalIcsString = "";
+var globalShiftsData = [];
 
-let gjeldendeTillegg = {
+var gjeldendeTillegg = {
     Natt_prosent: 45,
     Skumring_kr: 40,
     Helg_kr: 84,
@@ -158,7 +158,7 @@ function updateRatePreview() {
 }
 
 // ---- Theme & Width Cycling ----
-const themes = ['blue', 'dark'];
+var themes = ['blue', 'dark'];
 function cycleTheme() {
     let current = document.documentElement.getAttribute('data-theme') || 'blue';
     let nextIndex = (themes.indexOf(current) + 1) % themes.length;

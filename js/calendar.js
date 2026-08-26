@@ -138,36 +138,35 @@ function calDownloadBackup() {
     visToast(`Backup lastet ned: ${filename}`);
 }
 
+function calRestoreBackupObject(backup) {
+    if (!backup || !backup.events || !Array.isArray(backup.events)) {
+        throw new Error('Ugyldig backup-data: mangler events.');
+    }
+    const existing = calLoadEvents();
+    const merged = [...existing];
+    let added = 0;
+    backup.events.forEach(evt => {
+        const idx = merged.findIndex(e => e.id === evt.id);
+        if (idx >= 0) {
+            merged[idx] = evt;
+        } else {
+            merged.push(evt);
+            added++;
+        }
+    });
+    merged.sort((a, b) => a.start.localeCompare(b.start));
+    localStorage.setItem(TTA_CAL_STORAGE_KEY, JSON.stringify(merged));
+    return { total: merged.length, added: added, restored: backup.events.length };
+}
+
 function calRestoreFromFile(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = function (e) {
             try {
                 const backup = JSON.parse(e.target.result);
-                if (!backup.events || !Array.isArray(backup.events)) {
-                    reject('Ugyldig backup-fil: mangler events.');
-                    return;
-                }
-
-                // Merge with existing
-                const existing = calLoadEvents();
-                const merged = [...existing];
-
-                let added = 0;
-                backup.events.forEach(evt => {
-                    const idx = merged.findIndex(e => e.id === evt.id);
-                    if (idx >= 0) {
-                        merged[idx] = evt; // Update existing
-                    } else {
-                        merged.push(evt);
-                        added++;
-                    }
-                });
-
-                merged.sort((a, b) => a.start.localeCompare(b.start));
-                localStorage.setItem(TTA_CAL_STORAGE_KEY, JSON.stringify(merged));
-
-                resolve({ total: merged.length, added: added, restored: backup.events.length });
+                const result = calRestoreBackupObject(backup);
+                resolve(result);
             } catch (err) {
                 reject('Kunne ikke lese backup-fil: ' + err.message);
             }

@@ -1,0 +1,20 @@
+{
+  "name": "tta-app",
+  "version": "5.0.0",
+  "description": "Vakter i TTA til kalender — Automatisk vaktkonvertering, regelsjekk og HTA-lønnsberegning",
+  "scripts": {
+    "test": "node --test tests/**/*.test.js",
+    "test:watch": "node --test --watch tests/**/*.test.js",
+    "setup-hooks": "node tests/install-hook.js"
+  },
+  "keywords": [
+    "tta",
+    "ics",
+    "calendar",
+    "turnus",
+    "vaktliste",
+    "hta"
+  ],
+  "author": "OMS023",
+  "license": "CC-BY-NC-4.0"
+}

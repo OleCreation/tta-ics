@@ -230,3 +230,8 @@ function parseIsoToDate(isoStr) {
     let minutes = parseInt(isoStr.slice(11, 13));
     return new Date(year, month, day, hours, minutes, 0);
 }
+
+function formatMoney(amount) {
+    if (typeof amount !== 'number' || isNaN(amount)) amount = 0;
+    return Math.round(amount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+}
