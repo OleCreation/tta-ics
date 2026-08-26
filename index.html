@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Vakter i TTA til kalender — Konverter vaktlister fra TTA til kalender (.ics) med automatisk regelsjekk og valgfri lønnsberegning.">
+    <meta name="description" content="Vakter fra TTA til kalender — Konverter vaktlister fra TTA til kalender (.ics) med automatisk regelsjekk og valgfri lønnsberegning.">
     <meta name="theme-color" content="#161e2e">
-    <meta property="og:title" content="Vakter i TTA til kalender">
+    <meta property="og:title" content="Vakter fra TTA til kalender">
     <meta property="og:description" content="Konverter vaktlister fra TTA til kalender (.ics) med automatisk regelsjekk og valgfri lønnsberegning. 100% lokalt og privat.">
     <meta property="og:url" content="https://olecreation.github.io/tta-ics/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://olecreation.github.io/tta-ics/img/logo.jpg">
-    <title>Vakter i TTA til kalender</title>
+    <title>Vakter fra TTA til kalender</title>
     <link rel="icon" href="img/logo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .logo-dark { display: none; }
+        [data-theme="dark"] .logo-light { display: none; }
+        [data-theme="dark"] .logo-dark { display: inline-block; }
+    </style>
 </head>
 <body>
 
@@ -22,8 +27,9 @@
     <div class="app-header">
         <div class="header-content">
             <h1>
-                <img src="img/logo.jpg" alt="App Logo" style="width: 50px; height: 50px; object-fit: cover; clip-path: inset(5% round 15%); vertical-align: middle; margin-right: 12px;">
-                <span style="vertical-align: middle;">Vakter i TTA til kalender</span>
+                <img src="img/logo.jpg" alt="App Logo" class="logo-light" style="width: 50px; height: 50px; object-fit: cover; clip-path: inset(5% round 15%); vertical-align: middle; margin-right: 12px;">
+                <img src="img/logo_dark.jpg" alt="App Logo Dark" class="logo-dark" style="width: 50px; height: 50px; object-fit: cover; clip-path: inset(5% round 15%); vertical-align: middle; margin-right: 12px;">
+                <span style="vertical-align: middle;">Vakter fra TTA til kalender</span>
             </h1>
             <div class="header-actions">
                 <a href="https://github.com/OleCreation/tta-ics" target="_blank" rel="noopener noreferrer" class="tool-pill icon-only header-btn" title="Åpne GitHub" aria-label="GitHub">

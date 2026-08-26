@@ -1,7 +1,7 @@
 <div align="center">
-<img src="img/logo.jpg" alt="Vakter i TTA Logo" width="120" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 20px;">
+<img src="img/logo.jpg" alt="Vakter fra TTA Logo" width="120" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 20px;">
 
-# 🛡️ Vakter i TTA til kalender
+# 🛡️ Vakter fra TTA til kalender
 
 **Konverter vaktlister fra TTA til kalenderfiler (.ics) med automatisk regelsjekk og valgfri lønnsberegning.**
 
