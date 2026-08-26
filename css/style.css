@@ -1201,6 +1201,8 @@ details summary:hover {
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
     transition: all var(--transition-fast);
     -webkit-tap-highlight-color: transparent;
 }
