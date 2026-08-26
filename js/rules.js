@@ -205,3 +205,4 @@ function formatTimeShort(date) {
 
 if (typeof window !== 'undefined') window.RulesEngine = RulesEngine;
 if (typeof global !== 'undefined') global.RulesEngine = RulesEngine;
+

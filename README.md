@@ -1,7 +1,7 @@
 <div align="center">
 <img src="img/logo.png" alt="Vakter fra TTA Logo" width="120" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 20px;">
 
-# 🛡️ Vakter fra TTA til kalender
+# Vakter fra TTA til kalender
 
 **Konverter vaktlister fra TTA til kalenderfiler (.ics) med automatisk regelsjekk og valgfri lønnsberegning.**
 
@@ -44,7 +44,7 @@
 
 ## 📱 Mobil-app installasjon (Android & iPhone)
 
-Du kan enkelt bruke **Vakter i TTA til kalender** som en ekte app på mobilen:
+Du kan enkelt bruke **Vakter fra TTA til kalender** som en ekte app på mobilen:
 
 ### 🍎 iPhone / iPad (iOS)
 1. Åpne **[olecreation.github.io/tta-ics](https://olecreation.github.io/tta-ics)** i **Safari**.
@@ -77,3 +77,4 @@ Dette prosjektet er lisensiert under **[Creative Commons Attribution-NonCommerci
 - **Forbudt:** All kommersiell bruk eller videresalg av bedrifter/selskaper uten eksplisitt skriftlig samtykke.
 
 Copyright (c) 2026 **OMS023**.
+

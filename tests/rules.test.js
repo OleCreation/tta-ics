@@ -187,3 +187,4 @@ describe('Rules Engine & Rest Period Checks', () => {
         assert.equal(warningHeaderMatches.length, 1);
     });
 });
+

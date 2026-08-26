@@ -48,3 +48,4 @@ try {
     console.error('❌ Kunne ikke installere git hook:', err.message);
     process.exit(1);
 }
+

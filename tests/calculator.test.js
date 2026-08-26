@@ -171,3 +171,4 @@ describe('Salary Calculator & Norwegian Holidays (HTA)', () => {
         assert.equal(res.tillegg, 1200);
     });
 });
+

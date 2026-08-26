@@ -106,3 +106,4 @@ describe('UI Theme & Layout Width Controls', () => {
         assert.ok(!toolRowContent.includes('cycleTheme'), 'tool-row should not duplicate theme toggle');
     });
 });
+

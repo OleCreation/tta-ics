@@ -89,3 +89,4 @@ Uke Dag Fra dato / kl Til dato / kl Kode
         assert.equal(ctx.calGetEventCount(), 5);
     });
 });
+

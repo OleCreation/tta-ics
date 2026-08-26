@@ -168,7 +168,7 @@ Torsdag 04.06.26 08:00 04.06.26 15:30 V
 
         const ics = ctx.genererICS();
         assert.ok(ics.startsWith('BEGIN:VCALENDAR'));
-        assert.ok(ics.includes('PRODID:-//Vakter i TTA til kalender OMS023//NO'));
+        assert.ok(ics.includes('PRODID:-//Vakter fra TTA til kalender OMS023//NO'));
         assert.ok(ics.includes('BEGIN:VTIMEZONE'));
         assert.ok(ics.includes('TZID:Europe/Oslo'));
         assert.ok(ics.includes('BEGIN:VEVENT'));
@@ -218,3 +218,4 @@ Torsdag 04.06.26 08:00 04.06.26 15:30 V
         assert.ok(ics.includes('Kolliderer med overtid'));
     });
 });
+

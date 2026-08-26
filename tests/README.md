@@ -1,6 +1,6 @@
-# 🧪 Testsuite for Vakter i TTA til kalender
+# 🧪 Testsuite for Vakter fra TTA til kalender
 
-Denne mappen inneholder den automatiserte testsuiten for **Vakter i TTA til kalender**. Testsuiten kjører lynraskt (< 1 sekund) med Node.js sin innebygde testrunner (`node --test`), uten behov for tunge eksterne rammeverk.
+Denne mappen inneholder den automatiserte testsuiten for **Vakter fra TTA til kalender**. Testsuiten kjører lynraskt (< 1 sekund) med Node.js sin innebygde testrunner (`node --test`), uten behov for tunge eksterne rammeverk.
 
 ---
 
@@ -83,3 +83,4 @@ describe('Navn på ny funksjon', () => {
 
 ### 2. Kjøre og verifisere
 Kjør `node --test tests/**/*.test.js` og bekreft at testen består før du committer og pusher.
+
